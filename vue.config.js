@@ -1,5 +1,4 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/ares-form-builder/'
-    : '/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/ares-form-builder/' : '/',
+  productionSourceMap: false
 }

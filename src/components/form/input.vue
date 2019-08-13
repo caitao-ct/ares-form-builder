@@ -1,12 +1,12 @@
 <template>
-  <input type="text">
+  <input type="text" readonly="readonly" :value="value">
 </template>
 <script>
 export default {
   name: 'v-input',
   data () {
     return {
-      type: 'input',
+      tagName: 'vInput',
       value: '',
       name: 'haha'
     }
