@@ -6,6 +6,7 @@
       :group="{ name: 'people', pull: 'clone', put: false }"
     >
       <div
+        :is="element.type||'div'"
         class="item"
         v-for="element in myArray"
         :key="element.id"
