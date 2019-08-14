@@ -1,24 +1,23 @@
 <template>
   <div class="flex">
-    <div class="item-title">复选框</div>
-    <input type="checkbox">选项一
-    <input type="checkbox">选项二
+    <div class="item-title">单选框</div>
+    <input type="radio">选项一
+    <input type="radio">选项二
   </div>
-</template>
 
+</template>
 <script>
 export default {
-  name: 'v-checkbox',
+  name: 'v-radio',
   data () {
     return {
-      tagName: 'vCheckbox',
+      tagName: 'vRadio',
       value: '',
       name: ''
     }
   }
 }
 </script>
-
 <style lang="less" scoped>
 
 </style>

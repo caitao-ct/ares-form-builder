@@ -41,7 +41,10 @@ export default {
   margin: 10px;
   height: 70vh;
   .item{
-    border: 1px solid black;
+    margin: 20px 0;
+    .item-title{
+      width: 100px;
+    }
   }
 }
 .contain{
@@ -54,5 +57,8 @@ export default {
     height: 100vh;
     overflow: scroll;
   }
+}
+.flex{
+  display: flex;
 }
 </style>

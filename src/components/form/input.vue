@@ -1,6 +1,10 @@
 <template>
-  <input type="text" readonly="readonly" :value="value">
+  <div class="flex">
+    <div class="item-title">文本框</div>
+    <input type="text" readonly="readonly" :value="value">
+  </div>
 </template>
+
 <script>
 export default {
   name: 'v-input',
@@ -8,11 +12,12 @@ export default {
     return {
       tagName: 'vInput',
       value: '',
-      name: 'haha'
+      name: ''
     }
   }
 }
 </script>
+
 <style lang="less" scoped>
 
 </style>
