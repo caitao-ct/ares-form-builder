@@ -13,24 +13,25 @@
         v-for="(item,index) in list"
         :key="index"
         :is="item.tagName||'div'"
+        v-model="list[index]"
       ></div>
     </v-draggable>
   </div>
 </template>
 <script>
 import vDraggable from 'vuedraggable'
-import vInput from './form/input'
-import vTitle from './form/title'
-import vRadio from './form/radio'
-import vCheckbox from './form/checkbox'
-import vSelect from './form/select'
+import vInput, { inputData } from './form/input'
+import vTitle, { titleData } from './form/title'
+import vRadio, { radioData } from './form/radio'
+import vCheckbox, { checkboxData } from './form/checkbox'
+import vSelect, { selectData } from './form/select'
 
 const list = [
-  vTitle.data(),
-  vInput.data(),
-  vRadio.data(),
-  vCheckbox.data(),
-  vSelect.data()
+  titleData,
+  inputData,
+  radioData,
+  checkboxData,
+  selectData
 ]
 export default {
   name: 'preview',

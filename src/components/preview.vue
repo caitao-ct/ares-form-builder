@@ -13,15 +13,15 @@
           :class="formItem.lineType"
           v-for="(formItem,formIndex) in item"
           :key="formIndex"
-          @click="itemClick(formIndex)"
+          @click="itemEdit(formItem,formIndex,index)"
         >
-          <div :is="formItem.tagName||'div'"></div>
+          <div :is="formItem.tagName||'div'" v-model="item[formIndex]"></div>
           <div class="operation">
-            <button @click="itemEdit(formItem,formIndex,index)">设置</button>
-            <button @click="itemDelete(index,formIndex)">删除</button>
+            <button @click.stop="itemDelete(index,formIndex)">删除</button>
           </div>
         </div>
       </v-draggable>
+      <edit-modal v-model="modalModel" v-if="isShowModal" @confirm="onConfirm"></edit-modal>
   </div>
 </template>
 
@@ -32,16 +32,19 @@ import vTitle from './form/title'
 import vRadio from './form/radio'
 import vCheckbox from './form/checkbox'
 import vSelect from './form/select'
+import editModal from './editModal'
 
 export default {
   name: 'v-preview',
-  components: { vDraggable, vInput, vTitle, vRadio, vCheckbox, vSelect },
+  components: { vDraggable, editModal, vInput, vTitle, vRadio, vCheckbox, vSelect },
   props: {
     value: Array
   },
   data () {
     return {
-      list: this.value
+      list: this.value,
+      isShowModal: false,
+      modalModel: {}
     }
   },
   methods: {
@@ -55,13 +58,18 @@ export default {
     // 编辑表单
     itemEdit (item, formIndex, index) {
       console.log(item, formIndex, index)
-      this.list[index][formIndex]['value'] = 2
+      // this.list[index][formIndex]['value'] = 2
+      this.modalModel = item
+      this.isShowModal = true
     },
     // 删除其中一条
     itemDelete (index, formIndex) {
       let currentList = this.list[index]
       currentList.splice(formIndex, 1)
       this.list[index] = currentList
+    },
+    onConfirm () {
+      this.isShowModal = false
     }
   },
   watch: {

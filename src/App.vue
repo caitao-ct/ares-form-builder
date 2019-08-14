@@ -37,7 +37,8 @@ export default {
 <style lang="less">
 .box{
   padding: 10px;
-  border: 1px solid red;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
   margin: 10px;
   height: 70vh;
   .item{

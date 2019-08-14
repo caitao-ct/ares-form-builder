@@ -9,13 +9,18 @@
     </div>
 </template>
 <script>
+export const selectData = {
+  tagName: 'vSelect',
+  value: '',
+  name: '',
+  lineType: 'halfLine'
+}
 export default {
   name: 'v-select',
+  props: { value: Object },
   data () {
     return {
-      tagName: 'vSelect',
-      value: '',
-      name: ''
+      vModel: this.value
     }
   }
 }

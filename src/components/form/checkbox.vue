@@ -7,13 +7,20 @@
 </template>
 
 <script>
+export const checkboxData = {
+  tagName: 'vCheckbox',
+  value: '',
+  name: '',
+  lineType: 'halfLine'
+}
 export default {
   name: 'v-checkbox',
+  props: {
+    value: Object
+  },
   data () {
     return {
-      tagName: 'vCheckbox',
-      value: '',
-      name: ''
+      vModal: this.value
     }
   }
 }
