@@ -7,7 +7,7 @@
 
 <script>
 export const inputData = {
-  tagName: 'vInput',
+  tagName: 'input',
   value: '',
   title: '文本框',
   lineType: 'halfLine',

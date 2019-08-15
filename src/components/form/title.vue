@@ -5,7 +5,7 @@
 </template>
 <script>
 export const titleData = {
-  tagName: 'vTitle',
+  tagName: 'title',
   lineType: 'allLine',
   title: '标题'
 }

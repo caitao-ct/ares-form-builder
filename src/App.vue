@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import formList from './components/formList'
-import vPreview from './components/preview'
-import vSource from './components/source'
+import formList from './components/formList.vue'
+import vPreview from './components/preview.vue'
+import vSource from './components/source.vue'
 
 export default {
   name: 'app',
@@ -44,7 +44,7 @@ export default {
   .item{
     margin: 20px 0;
     .item-title{
-      width: 100px;
+       min-width: 100px;
     }
   }
 }
@@ -61,5 +61,9 @@ export default {
 }
 .flex{
   display: flex;
+}
+.content{
+  display: inline-block;
+  min-width: 100px;
 }
 </style>

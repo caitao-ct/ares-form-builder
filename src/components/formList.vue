@@ -12,7 +12,7 @@
         class="item"
         v-for="(item,index) in list"
         :key="index"
-        :is="item.tagName||'div'"
+        :is="'v-'+item.tagName||'div'"
         v-model="list[index]"
       ></div>
     </v-draggable>
@@ -20,11 +20,12 @@
 </template>
 <script>
 import vDraggable from 'vuedraggable'
-import vInput, { inputData } from './form/input'
-import vTitle, { titleData } from './form/title'
-import vRadio, { radioData } from './form/radio'
-import vCheckbox, { checkboxData } from './form/checkbox'
-import vSelect, { selectData } from './form/select'
+import vInput, { inputData } from './form/input.vue'
+import vTitle, { titleData } from './form/title.vue'
+import vRadio, { radioData } from './form/radio.vue'
+import vCheckbox, { checkboxData } from './form/checkbox.vue'
+import vSelect, { selectData } from './form/select.vue'
+import cloneDeep from 'lodash/cloneDeep'
 
 const list = [
   titleData,
@@ -46,7 +47,7 @@ export default {
       this.list = [...list]
     },
     onClone (obj) {
-      return Object.assign({}, obj)
+      return cloneDeep(obj)
     }
   }
 }

@@ -1,4 +1,5 @@
-# ares-form-builder
+# ares-form-builder [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) 
+
 
 ## Project setup
 ```

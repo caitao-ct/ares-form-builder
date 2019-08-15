@@ -6,15 +6,15 @@
           <span>标题名</span>
           <input type="text" v-model="vModel.title">
         </div>
-        <div v-if="vModel.tagName==='vInput'">
+        <div v-if="vModel.tagName==='v-input'">
           <span>默认值</span>
           <input type="text" v-model="vModel.value">
         </div>
-        <div v-if="vModel.tagName==='vInput'">
+        <div v-if="vModel.tagName==='v-input'">
           <span>提示文字</span>
           <input type="text" v-model="vModel.placeholder">
         </div>
-        <div v-if="vModel.tagName!=='vTitle'">
+        <div v-if="vModel.tagName!=='title'">
           <span>占据类型</span>
           <input type="radio" id="halfLine" name="lineType" v-model="vModel.lineType" value="halfLine"><label for="halfLine">占据半行</label>
           <input type="radio" id="allLine" name="lineType" v-model="vModel.lineType" value="allLine"><label for="allLine">占据整行</label>
@@ -23,14 +23,18 @@
           <span>class</span>
           <input type="text" v-model="vModel.class">
         </div>
-        <div v-if="vModel.tagName==='vInput'">
-          <div>设置选择项</div>
-          <div>
-
+        <div v-if="vModel.options">
+          <div>设置选择项<button @click="addOption">添加</button></div>
+          <div v-for="(item,index) in vModel.options" :key="index">
+            <span>value</span>
+            <input type="text" v-model="item.id">
+            <span>显示值</span>
+            <input type="text" v-model="item.name">
+            <button @click="deleteOption(index)">删除</button>
           </div>
         </div>
 
-        <div @click="addAttr">添加其他属性</div>
+        <div>其他属性<button @click="addAttr">添加</button></div>
         <div
           v-for="(item,index) in vModel.attrs"
           :key="index"
@@ -72,6 +76,14 @@ export default {
     },
     deleteAttr (index) {
       this.vModel.attrs.splice(index, 1)
+    },
+    addOption () {
+      this.vModel.options.push(
+        { id: '', name: '' }
+      )
+    },
+    deleteOption (index) {
+      this.vModel.options.splice(index, 1)
     }
   }
 }

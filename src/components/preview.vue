@@ -13,9 +13,9 @@
           :class="formItem.lineType"
           v-for="(formItem,formIndex) in item"
           :key="formIndex"
-          @click="itemEdit(formItem,formIndex,index)"
+          @click.prevent="itemEdit(formItem,formIndex,index)"
         >
-          <div :is="formItem.tagName||'div'" v-model="item[formIndex]"></div>
+          <div :is="'v-'+formItem.tagName||'div'" v-model="item[formIndex]" style="overflow: hidden"></div>
           <div class="operation">
             <button @click.stop="itemDelete(index,formIndex)">删除</button>
           </div>
@@ -27,12 +27,12 @@
 
 <script>
 import vDraggable from 'vuedraggable'
-import vInput from './form/input'
-import vTitle from './form/title'
-import vRadio from './form/radio'
-import vCheckbox from './form/checkbox'
-import vSelect from './form/select'
-import editModal from './editModal'
+import vInput from './form/input.vue'
+import vTitle from './form/title.vue'
+import vRadio from './form/radio.vue'
+import vCheckbox from './form/checkbox.vue'
+import vSelect from './form/select.vue'
+import editModal from './editModal.vue'
 
 export default {
   name: 'v-preview',
@@ -51,9 +51,6 @@ export default {
     // 添加表单
     addForm () {
       this.list.push([])
-    },
-    itemClick (index) {
-      console.log(index)
     },
     // 编辑表单
     itemEdit (item, formIndex, index) {
