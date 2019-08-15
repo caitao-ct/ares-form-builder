@@ -1,13 +1,13 @@
 <template>
   <div>
     <button @click="addForm">添加表单</button>
-    <v-draggable
-        v-for="(item,index) in list"
-        :key="index"
+    <div v-for="(item,index) in list" :key="index" class="form-content">
+      <img src="../assets/close.png" class="editImg closeForm" @click="closeForm(index)">
+      <v-draggable
         class="box"
         v-model="list[index]"
         group="form"
-      >
+        >
         <div
           class="item"
           :class="formItem.lineType"
@@ -17,11 +17,12 @@
         >
           <div :is="'v-'+formItem.tagName||'div'" v-model="item[formIndex]" style="overflow: hidden"></div>
           <div class="operation">
-            <button @click.stop="itemDelete(index,formIndex)">删除</button>
+            <img src="../assets/delete.png" @click.stop="itemDelete(index,formIndex)" class="editImg">
           </div>
         </div>
       </v-draggable>
-      <edit-modal v-model="modalModel" v-if="isShowModal" @confirm="onConfirm"></edit-modal>
+    </div>
+    <edit-modal v-model="modalModel" v-if="isShowModal" @confirm="onConfirm"></edit-modal>
   </div>
 </template>
 
@@ -32,11 +33,12 @@ import vTitle from './form/title.vue'
 import vRadio from './form/radio.vue'
 import vCheckbox from './form/checkbox.vue'
 import vSelect from './form/select.vue'
+import vArea from './form/area.vue'
 import editModal from './editModal.vue'
 
 export default {
   name: 'v-preview',
-  components: { vDraggable, editModal, vInput, vTitle, vRadio, vCheckbox, vSelect },
+  components: { vDraggable, editModal, vInput, vTitle, vRadio, vCheckbox, vSelect, vArea },
   props: {
     value: Array
   },
@@ -51,6 +53,9 @@ export default {
     // 添加表单
     addForm () {
       this.list.push([])
+    },
+    closeForm (index) {
+      this.list.splice(index, 1)
     },
     // 编辑表单
     itemEdit (item, formIndex, index) {
@@ -89,6 +94,15 @@ export default {
   .operation{
     position: absolute;
     right: 10px;
-    top: -20px;
+    top: 0px;
   }
+  .form-content{
+    position: relative;
+    .closeForm{
+      position: absolute;
+      right: 20px;
+      top: 0px;
+    }
+  }
+
 </style>

@@ -2,7 +2,7 @@
   <div class="flex">
     <div class="item-title">{{vModel.title}}</div>
     <div v-for="(item,index) in vModel.options" :key="index" class="content">
-      <input type="checkbox" name="vModel.name" id="vModel">{{item.name}}
+      <input type="checkbox" name="vModel.name">{{item.name}}
     </div>
   </div>
 </template>
@@ -16,7 +16,8 @@ export const checkboxData = {
   options: [
     { id: '01', name: '选项一' },
     { id: '02', name: '选项二' }
-  ]
+  ],
+  class: ''
 }
 export default {
   name: 'v-checkbox',

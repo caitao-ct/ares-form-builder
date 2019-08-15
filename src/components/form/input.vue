@@ -11,7 +11,8 @@ export const inputData = {
   value: '',
   title: '文本框',
   lineType: 'halfLine',
-  placeholder: ''
+  placeholder: '',
+  class: ''
 }
 export default {
   name: 'v-input',

@@ -7,7 +7,8 @@
 export const titleData = {
   tagName: 'title',
   lineType: 'allLine',
-  title: '标题'
+  title: '标题',
+  class: ''
 }
 export default {
   name: 'v-title',

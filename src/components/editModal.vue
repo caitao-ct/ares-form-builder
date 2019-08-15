@@ -2,50 +2,57 @@
   <div class="modal">
       <div class="modal-contain">
         <div class="modal-title">编辑属性</div>
-        <div>
-          <span>标题名</span>
+        <div class="line-item">
+          <label class="label">标题名</label>
           <input type="text" v-model="vModel.title">
         </div>
-        <div v-if="vModel.tagName==='v-input'">
-          <span>默认值</span>
+        <div v-if="vModel.tagName==='v-input'" class="line-item">
+          <label class="label">默认值</label>
           <input type="text" v-model="vModel.value">
         </div>
-        <div v-if="vModel.tagName==='v-input'">
-          <span>提示文字</span>
+        <div v-if="vModel.tagName==='v-input'" class="line-item">
+          <label class="label">提示文字</label>
           <input type="text" v-model="vModel.placeholder">
         </div>
-        <div v-if="vModel.tagName!=='title'">
-          <span>占据类型</span>
+        <div v-if="vModel.tagName!=='title'" class="line-item">
+          <label class="label">占据类型</label>
           <input type="radio" id="halfLine" name="lineType" v-model="vModel.lineType" value="halfLine"><label for="halfLine">占据半行</label>
           <input type="radio" id="allLine" name="lineType" v-model="vModel.lineType" value="allLine"><label for="allLine">占据整行</label>
         </div>
-        <div>
-          <span>class</span>
+        <div class="line-item">
+          <label class="label">class</label>
           <input type="text" v-model="vModel.class">
         </div>
+        <div v-if="vModel.tagName==='radio' || vModel.tagName==='checkbox'" class="line-item">
+          <label class="label">name</label>
+          <input type="text" v-model="vModel.name">
+        </div>
         <div v-if="vModel.options">
-          <div>设置选择项<button @click="addOption">添加</button></div>
-          <div v-for="(item,index) in vModel.options" :key="index">
-            <span>value</span>
+          <div>设置选择项<img src="../assets/add.png" class="editImg" @click="addOption"></div>
+          <div v-for="(item,index) in vModel.options" :key="index" class="line-item">
+            <label class="label">value</label>
             <input type="text" v-model="item.id">
-            <span>显示值</span>
+            <label class="label">显示值</label>
             <input type="text" v-model="item.name">
-            <button @click="deleteOption(index)">删除</button>
+            <img src="../assets/delete.png" class="editImg" @click="deleteOption(index)">
           </div>
         </div>
 
-        <div>其他属性<button @click="addAttr">添加</button></div>
+        <div>其他属性<img src="../assets/add.png" class="editImg" @click="addAttr"></div>
         <div
           v-for="(item,index) in vModel.attrs"
           :key="index"
+          class="line-item"
         >
-          <span>属性名</span>
+          <label class="label">属性名</label>
           <input type="text" v-model="item.key">
-          <span>属性值</span>
+          <label class="label">属性值</label>
           <input type="text" v-model="item.value">
-          <button @click="deleteAttr(index)">删除</button>
+          <img src="../assets/delete.png" class="editImg" @click="deleteAttr(index)">
         </div>
-        <button @click="onConfirm">确定</button>
+        <div class="modal-footer">
+          <button @click="onConfirm" class="confirmBtn">确定</button>
+        </div>
       </div>
     </div>
 </template>
@@ -108,5 +115,27 @@ export default {
         margin: 10px 0;
       }
     }
+  }
+  .label{
+    display: inline-block;
+    width: 100px;
+    padding-left: 10px;
+  }
+  .line-item{
+    margin: 10px;
+    display: flex;
+  }
+  .modal-footer{
+    text-align: center;
+  }
+  .confirmBtn{
+    height: 40px;
+    width: 200px;
+    background: #2d8cf0;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    margin-top: 20px;
   }
 </style>

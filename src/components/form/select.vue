@@ -10,13 +10,14 @@
         {{item.name}}
       </option>
     </select>
-    </div>
+  </div>
 </template>
 <script>
 export const selectData = {
   tagName: 'select',
   title: '下拉菜单',
   name: '',
+  class: '',
   lineType: 'halfLine',
   options: [
     { id: '01', name: '选项一' },

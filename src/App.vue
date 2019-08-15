@@ -39,12 +39,15 @@ export default {
   padding: 10px;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
-  margin: 10px;
+  margin: 20px;
   height: 70vh;
+  overflow: scroll;
   .item{
-    margin: 20px 0;
+    margin: 10px 0;
     .item-title{
        min-width: 100px;
+       padding-left: 10px;
+       line-height: 30px;
     }
   }
 }
@@ -65,5 +68,24 @@ export default {
 .content{
   display: inline-block;
   min-width: 100px;
+  height: 30px;
+  line-height: 30px;
+}
+.editImg{
+    width: 20px;
+    border: 5px solid transparent;
+    vertical-align: middle;
+  }
+input[type='text']{
+  border-radius: 5px;
+  border: 1px solid #e1e1e1;
+  padding: 5px;
+  flex: 1;
+  height: 30px;
+  box-sizing: border-box;
+}
+select{
+  flex: 1;
+  height: 30px;
 }
 </style>

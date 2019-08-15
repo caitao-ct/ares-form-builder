@@ -2,7 +2,7 @@
   <div class="flex">
     <div class="item-title">{{vModel.title}}</div>
     <div v-for="(item,index) in vModel.options" :key="index" class="content">
-      <input type="radio" name="vModel.name" id="vModel">{{item.name}}
+      <input type="radio" name="vModel.name">{{item.name}}
     </div>
   </div>
 
@@ -12,6 +12,7 @@ export const radioData = {
   tagName: 'radio',
   title: '单选框',
   name: '',
+  class: '',
   lineType: 'halfLine',
   options: [
     { id: '01', name: '选项一' },
