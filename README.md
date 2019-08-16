@@ -42,11 +42,13 @@ yarn build
       "options": [
         {
           "id": "01",
-          "name": "选项一"
+          "name": "选项一",
+          "checked": true
         },
         {
           "id": "02",
-          "name": "选项二"
+          "name": "选项二",
+          "checked": false
         }
       ]
     },
@@ -58,11 +60,13 @@ yarn build
       "options": [
         {
           "id": "01",
-          "name": "选项一"
+          "name": "选项一",
+          "checked": true
         },
         {
           "id": "02",
-          "name": "选项二"
+          "name": "选项二",
+          "checked": true
         }
       ],
       "class": ""
@@ -76,11 +80,13 @@ yarn build
       "options": [
         {
           "id": "01",
-          "name": "身份证"
+          "name": "身份证",
+          "checked": false
         },
         {
           "id": "02",
-          "name": "护照"
+          "name": "护照",
+          "checked": false
         }
       ],
       "attrs": [
@@ -155,6 +161,6 @@ yarn build
 | placeholder | 输入框中表示placeholder的值 |
 | lineType | 控件占行类型, halfLine 表示半行,allLine 表示整行 |
 | class | 控件 class 属性 |
-| options | 在 radio,checkbox,select中表示选择项的数组, 数组的一个元素代表一个选项, 数组元素中的id代表选项的值,name表示需要显示页面上的数据 |
+| options | 在 radio,checkbox,select中表示选择项的数组, 数组的一个元素代表一个选项, 数组元素中的id代表选项的值,name表示需要显示页面上的数据,checked表示该项默认选中 |
 | attrs | 表示自定义设置的其他属性, 为一个数组, 数组的元素中的key代表属性名,value代表属性值 |
 

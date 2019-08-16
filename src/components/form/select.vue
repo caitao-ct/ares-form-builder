@@ -6,6 +6,7 @@
         :value="item.id"
         v-for="(item,index) in vModel.options"
         :key="index"
+        :selected="item.checked"
       >
         {{item.name}}
       </option>
@@ -20,8 +21,8 @@ export const selectData = {
   name: '',
   class: '',
   options: [
-    { id: '01', name: '选项一' },
-    { id: '02', name: '选项二' }
+    { id: '01', name: '选项一', checked: false },
+    { id: '02', name: '选项二', checked: false }
   ]
 }
 export default {

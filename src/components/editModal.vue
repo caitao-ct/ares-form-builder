@@ -34,6 +34,10 @@
             <input type="text" v-model="item.id">
             <label class="label">显示值</label>
             <input type="text" v-model="item.name">
+            <span @click.prevent="toggleChecked(index)">
+              <input type="checkbox" name="isChecked" v-model="item.checked" true-value="true" false-value="false" :id="index">
+              <label :for="index">默认选中</label>
+            </span>
             <img src="../assets/delete.png" class="editImg" @click="deleteOption(index)">
           </div>
         </div>
@@ -91,6 +95,14 @@ export default {
     },
     deleteOption (index) {
       this.vModel.options.splice(index, 1)
+    },
+    toggleChecked (index) {
+      if (this.vModel.tagName !== 'checkbox') {
+        this.vModel.options.forEach(item => {
+          item.checked = false
+        })
+      }
+      this.vModel.options[index].checked = true
     }
   }
 }

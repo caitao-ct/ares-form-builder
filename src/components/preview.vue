@@ -1,6 +1,5 @@
 <template>
   <div>
-    <button @click="addForm">添加表单</button>
     <div v-for="(item,index) in list" :key="index" class="form-content">
       <img src="../assets/close.png" class="editImg closeForm" @click="closeForm(index)">
       <v-draggable
@@ -50,10 +49,6 @@ export default {
     }
   },
   methods: {
-    // 添加表单
-    addForm () {
-      this.list.push([])
-    },
     closeForm (index) {
       this.list.splice(index, 1)
     },

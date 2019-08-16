@@ -3,9 +3,12 @@
     <div class="contain">
       <form-list class="form-list"></form-list>
       <div class="form-result">
-        <h1 style="text-align:center">构建表单</h1>
-        <button @click="showSource=false">显示表单</button>
-        <button @click="showSource=true">生成数据</button>
+        <h1 style="text-align:center;margin-bottom:0">构建表单</h1>
+        <div>
+          <button @click="showSource=false" class="btnGroup" :class="{show: showSource===false}">显示表单</button>
+          <button @click="showSource=true" class="btnGroup" :class="{show: showSource}">生成数据</button>
+         <button @click="addForm" class="btnGroup" style="margin-left: 50px">添加表单</button>
+        </div>
         <v-preview v-model="sourceList" v-show="!showSource"></v-preview>
         <v-source :value="sourceList" v-show="showSource"></v-source>
       </div>
@@ -26,6 +29,12 @@ export default {
       showSource: false
     }
   },
+  methods: {
+    // 添加表单
+    addForm () {
+      this.sourceList.push([])
+    }
+  },
   components: {
     formList,
     vPreview,
@@ -35,6 +44,22 @@ export default {
 </script>
 
 <style lang="less">
+button{
+  outline:none;
+}
+.btnGroup{
+  background: #fff;
+  height: 30px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+  &.show{
+    border: none;
+    background: #2d8cf0;
+    color: #fff;
+  }
+}
 .box{
   padding: 10px;
   border: 1px solid #e1e1e1;
