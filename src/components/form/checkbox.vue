@@ -10,14 +10,14 @@
 <script>
 export const checkboxData = {
   tagName: 'checkbox',
+  lineType: 'halfLine',
   title: '复选框',
   name: '',
-  lineType: 'halfLine',
+  class: '',
   options: [
     { id: '01', name: '选项一' },
     { id: '02', name: '选项二' }
-  ],
-  class: ''
+  ]
 }
 export default {
   name: 'v-checkbox',

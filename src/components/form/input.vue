@@ -9,10 +9,10 @@
 export const inputData = {
   tagName: 'input',
   value: '',
+  class: '',
   title: '文本框',
   lineType: 'halfLine',
-  placeholder: '',
-  class: ''
+  placeholder: ''
 }
 export default {
   name: 'v-input',

@@ -16,10 +16,10 @@
 <script>
 export const areaData = {
   tagName: 'area',
+  lineType: 'allLine',
   title: '省市区',
   name: '',
-  class: '',
-  lineType: 'allLine'
+  class: ''
 }
 export default {
   name: 'v-area',

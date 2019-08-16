@@ -15,10 +15,10 @@
 <script>
 export const selectData = {
   tagName: 'select',
+  lineType: 'halfLine',
   title: '下拉菜单',
   name: '',
   class: '',
-  lineType: 'halfLine',
   options: [
     { id: '01', name: '选项一' },
     { id: '02', name: '选项二' }

@@ -10,10 +10,10 @@
 <script>
 export const radioData = {
   tagName: 'radio',
+  lineType: 'halfLine',
   title: '单选框',
   name: '',
   class: '',
-  lineType: 'halfLine',
   options: [
     { id: '01', name: '选项一' },
     { id: '02', name: '选项二' }
