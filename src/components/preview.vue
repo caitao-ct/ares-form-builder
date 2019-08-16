@@ -33,11 +33,12 @@ import vRadio from './form/radio.vue'
 import vCheckbox from './form/checkbox.vue'
 import vSelect from './form/select.vue'
 import vArea from './form/area.vue'
+import vDate from './form/date.vue'
 import editModal from './editModal.vue'
 
 export default {
   name: 'v-preview',
-  components: { vDraggable, editModal, vInput, vTitle, vRadio, vCheckbox, vSelect, vArea },
+  components: { vDraggable, editModal, vInput, vTitle, vRadio, vCheckbox, vSelect, vArea, vDate },
   props: {
     value: Array
   },

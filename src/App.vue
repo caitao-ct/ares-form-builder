@@ -101,7 +101,7 @@ button{
     border: 5px solid transparent;
     vertical-align: middle;
   }
-input[type='text']{
+input[type='text'],input[type='date']{
   border-radius: 5px;
   border: 1px solid #e1e1e1;
   padding: 5px;

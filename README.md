@@ -144,6 +144,7 @@ yarn build
 |   字段   |   说明   |
 | ---- | ---- |
 | input | 输入框 |
+| date | 日期选择框 |
 | title | 标题 |
 | radio | 单选框 |
 | checkbox | 复选框 |

@@ -26,11 +26,13 @@ import vRadio, { radioData } from './form/radio.vue'
 import vCheckbox, { checkboxData } from './form/checkbox.vue'
 import vSelect, { selectData } from './form/select.vue'
 import vArea, { areaData } from './form/area.vue'
+import vDate, { dateData } from './form/date.vue'
 import cloneDeep from 'lodash/cloneDeep'
 
 const list = [
   titleData,
   inputData,
+  dateData,
   radioData,
   checkboxData,
   selectData,
@@ -38,7 +40,7 @@ const list = [
 ]
 export default {
   name: 'preview',
-  components: { vDraggable, vInput, vTitle, vRadio, vCheckbox, vSelect, vArea },
+  components: { vDraggable, vInput, vTitle, vRadio, vCheckbox, vSelect, vArea, vDate },
   data () {
     return {
       list: [...list]
