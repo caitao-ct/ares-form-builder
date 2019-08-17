@@ -71,7 +71,7 @@ export default {
     }
   },
   watch: {
-    list (newValue) {
+    list () {
       this.$emit('input', this.list)
     }
   }
@@ -90,14 +90,14 @@ export default {
   .operation{
     position: absolute;
     right: 10px;
-    top: 0px;
+    top: 0;
   }
   .form-content{
     position: relative;
     .closeForm{
       position: absolute;
       right: 20px;
-      top: 0px;
+      top: 0;
     }
   }
 

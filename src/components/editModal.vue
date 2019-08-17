@@ -6,11 +6,11 @@
           <label class="label">标题名</label>
           <input type="text" v-model="vModel.title">
         </div>
-        <div v-if="vModel.tagName==='v-input'" class="line-item">
+        <div v-if="vModel.tagName==='input'" class="line-item">
           <label class="label">默认值</label>
           <input type="text" v-model="vModel.value">
         </div>
-        <div v-if="vModel.tagName==='v-input'" class="line-item">
+        <div v-if="vModel.tagName==='input'" class="line-item">
           <label class="label">提示文字</label>
           <input type="text" v-model="vModel.placeholder">
         </div>
