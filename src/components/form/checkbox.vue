@@ -8,7 +8,7 @@
 </template>
 
 <script>
-export const checkboxData = {
+export const data = {
   tagName: 'checkbox',
   lineType: 'halfLine',
   title: '复选框',
@@ -31,7 +31,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-
-</style>

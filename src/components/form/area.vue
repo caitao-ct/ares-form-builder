@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-export const areaData = {
+export const data = {
   tagName: 'area',
   lineType: 'allLine',
   title: '省市区',
@@ -31,6 +31,3 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
-
-</style>

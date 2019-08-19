@@ -8,7 +8,7 @@
 
 </template>
 <script>
-export const radioData = {
+export const data = {
   tagName: 'radio',
   lineType: 'halfLine',
   title: '单选框',
@@ -29,6 +29,3 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
-
-</style>

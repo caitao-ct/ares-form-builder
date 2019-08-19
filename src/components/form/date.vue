@@ -6,7 +6,7 @@
 </template>
 
 <script>
-export const dateData = {
+export const data = {
   tagName: 'date',
   value: '',
   class: '',

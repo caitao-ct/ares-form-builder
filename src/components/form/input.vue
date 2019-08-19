@@ -6,7 +6,7 @@
 </template>
 
 <script>
-export const inputData = {
+export const data = {
   tagName: 'input',
   value: '',
   class: '',

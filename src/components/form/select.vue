@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-export const selectData = {
+export const data = {
   tagName: 'select',
   lineType: 'halfLine',
   title: '下拉菜单',
@@ -35,6 +35,3 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
-
-</style>

@@ -20,14 +20,14 @@
 </template>
 <script>
 import vDraggable from 'vuedraggable'
-import vInput, { inputData } from './form/input.vue'
-import vTitle, { titleData } from './form/title.vue'
-import vRadio, { radioData } from './form/radio.vue'
-import vCheckbox, { checkboxData } from './form/checkbox.vue'
-import vSelect, { selectData } from './form/select.vue'
-import vArea, { areaData } from './form/area.vue'
-import vDate, { dateData } from './form/date.vue'
 import cloneDeep from 'lodash/cloneDeep'
+import vInput, { data as inputData } from './form/input.vue'
+import vTitle, { data as titleData } from './form/title.vue'
+import vRadio, { data as radioData } from './form/radio.vue'
+import vCheckbox, { data as checkboxData } from './form/checkbox.vue'
+import vSelect, { data as selectData } from './form/select.vue'
+import vArea, { data as areaData } from './form/area.vue'
+import vDate, { data as dateData } from './form/date.vue'
 
 const list = [
   titleData,

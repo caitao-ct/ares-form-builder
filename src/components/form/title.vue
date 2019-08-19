@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-export const titleData = {
+export const data = {
   tagName: 'title',
   lineType: 'allLine',
   title: '标题',
