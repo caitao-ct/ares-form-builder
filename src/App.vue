@@ -5,7 +5,7 @@
       <div class="form-result">
         <h1 style="text-align:center;margin-bottom:0">构建表单</h1>
         <div>
-          <button @click="showSource=false" class="btnGroup" :class="{show: showSource===false}">显示表单</button>
+          <button @click="showSource=false" class="btnGroup" :class="{show: !showSource}">显示表单</button>
           <button @click="showSource=true" class="btnGroup" :class="{show: showSource}">生成数据</button>
          <button @click="addForm" class="btnGroup" style="margin-left: 50px">添加表单</button>
         </div>
